@@ -11,7 +11,7 @@ const loginController = async (req, res) => {
       sameSite: "strict",
       path: "/",
       maxAge: 9000000,
-      httpOnly: false,
+      httpOnly: process.env.NODE_ENV === "development" ? false : true,
     })
     .json({
       errors,
