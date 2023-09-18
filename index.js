@@ -4,7 +4,8 @@ const app = require("express")();
 const server = require("http").createServer(app);
 const cors = require("cors");
 var cookieParser = require("cookie-parser");
-
+const pg = require("pg");
+const fs = require("fs");
 const io = require("socket.io")(server, {
   cors: { origin: "http://localhost:3000" },
 });
@@ -37,7 +38,6 @@ io.on("connection", (socket) => {
     socket.to(data.room).emit("listen_position", data);
   });
 });
-
 server.listen(8080, () => {
   console.log("now running");
 });
