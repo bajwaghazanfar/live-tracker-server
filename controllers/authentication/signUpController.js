@@ -32,7 +32,7 @@ const signUpController = async (req, res) => {
       sameSite: "strict",
       path: "/",
       maxAge: 900000,
-      httpOnly: process.env.NODE_ENV === "development" ? false : true,
+      httpOnly: true,
     })
     .json({
       errors,

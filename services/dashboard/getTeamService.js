@@ -6,7 +6,7 @@ const {
 
 const getTeamService = async (id) => {
   const team = await getTeamByID(id);
-  console.log(team.rows[0].trips);
+
   if (team.rows[0].couriers === null) {
     return {
       errors: null,
